@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Juju & Jaja, créations fait main </title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="description" content="Découvrez Vibes Resort, nouvelle résidence de standing à vocation touristique située dans le village naturiste du Cap d'Agde. De la chambre T1 à la suite 4 pièces. Contactez-nous !" />
+
+    <script src="https://kit.fontawesome.com/2f609438b2.js" crossorigin="anonymous" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta content="" name="keywords">
+
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+
+      <!-- ======= Navbar ======= -->
+      <nav id="main-nav">
+        <div class="row">
+          <div class="container">
+
+            <div class="logo">
+              <a href="index.html"><%= image_tag("logo4.png")%></a>
+            </div>
+
+            <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+            <ul class="nav-menu list-unstyled">
+              <li><a href="index.html" class="smoothScroll">Home</a></li>
+              <li><a href="#about" class="smoothScroll">About</a></li>
+              <li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
+              <li><a href="#journal" class="smoothScroll">Blog</a></li>
+              <li><a href="#contact" class="smoothScroll">Contact</a></li>
+            </ul>
+
+          </div>
+        </div>
+      </nav><!-- End Navbar -->
+
+
+    <%= yield %>
+
+
+
+      <!-- ======= Footer ======= -->
+      <div id="footer" class="text-center">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-3">
+              <p><i class="fas fa-phone pr-2"></i>  06 66 66 66 66</p>
+            </div>
+
+            <div class="col-3">
+              <p><i class="far fa-envelope pr-2"></i> juju@jaja.com</p>
+            </div>
+
+            <div class="col-3">
+              <p><i class="fas fa-map-marker-alt pr-2"></i> Nîmes</p>
+            </div>
+
+            <div class="col-3">
+              <div class="socials-media text-center">
+
+                <ul class="list-unstyled">
+                  <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="credits">
+            &copy; 2020. Made with ♡
+          </div>
+
+        </div>
+      </div><!-- End Footer -->
+
+
+  </body>
+</html>
