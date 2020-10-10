@@ -110,6 +110,10 @@ p {
   border-bottom : 1px solid #fcdf4c
 }
 
+
+
+
+
 /**
 * ZOOM IMAGE EFFECT ON HOVER // wpRock.fr
 */
@@ -215,19 +219,41 @@ p {
 }
 
 .btn {
-  background: #333;
+  background: #fcdf4c;
   border: medium none;
-  border-radius: 0;
+  border-radius: 30px;
   color: #fff;
-  font-size: 12px;
+  font-size: 16px;
   height: 50px;
   line-height: 50px;
   padding: 0 30px;
   text-transform: uppercase;
+  border-color: #fcdf4c;
 }
 
 .btn:hover, .btn:focus {
-  color: #fff;
+  color: #fcdf4c;
+  background-color:white;
+  border: 1px solid #fcdf4c;
+}
+
+.btn-outline-primary {
+  background: white;
+  border: medium none;
+  border-radius: 30px;
+  color: #fcdf4c;
+  font-size: 16px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 30px;
+  text-transform: uppercase;
+  border: 1px solid #fcdf4c
+}
+
+.btn-outline-primary:hover, .btn:focus {
+  color: white;
+  background-color:#fcdf4c;
+  border: 1px solid #fcdf4c;
 }
 
 .padDiv {
@@ -825,8 +851,6 @@ nav ul li a {
 
 .php-email-form .error-message {
   display: none;
-  color: #fff;
-  background: #ed3c0d;
   text-align: left;
   padding: 15px;
   font-weight: 600;
@@ -838,8 +862,6 @@ nav ul li a {
 
 .php-email-form .sent-message {
   display: none;
-  color: #fff;
-  background: #18d26e;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -847,7 +869,6 @@ nav ul li a {
 
 .php-email-form .loading {
   display: none;
-  background: #fff;
   text-align: center;
   padding: 15px;
 }
