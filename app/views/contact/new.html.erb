@@ -7,6 +7,14 @@
     <div class="container">
       <div class="hero-content">
         <!--<h1>I'm <span class="typed">azezezez</span></h1>-->
+
+        <% flash.each do |type, msg| %>
+          <div class="alert alert-info margin-top:100px; " style="z-index:1">
+            <%= msg %>
+          </div>
+        <% end %>
+
+
         <%= image_tag("logo4.png", {:style => "width:40%;"})%>
 
 
@@ -117,7 +125,7 @@
 
               <%= image_tag("vetements.jpg", {:class => "img-fluid"})%>
               <div class=" card-img-overlay">
-                <h2 class="titre-categorie pt-4 ml-4">Les vâtements <br>& Cie </h2>
+                <h2 class="titre-categorie pt-4 ml-4">Les vêtements <br>& Cie </h2>
               </div>
 
 
@@ -256,7 +264,7 @@
             </div>
 
 
-            <div class="col-lg-6 zebre" style="background-image: url(<%= asset_path 'zebre.png'%>); padding-top:6em; padding-bottom:6em; ">
+            <div class="col-lg-6 zebre" style="background-image: url(<%= asset_path "zebre.png"%>); padding-top:6em; padding-bottom:6em; ">
 
 
               <h2 class="pl-4 pb-4 mb-4 titre-categorie" >Contactez-moi !</h2>
@@ -319,6 +327,13 @@
           </div>
 
     </div><!-- End Contact Section -->
+
+
+
+
+  <%= link_to "kdjklsjd", new_actualite_path%><br>
+  <%= link_to "kdjklsjd", actualite_index_path%>
+
 
 
 

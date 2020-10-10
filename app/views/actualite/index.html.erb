@@ -1,0 +1,51 @@
+
+<div id="journal" class="text-left paddsection">
+
+  <div class="container">
+    <div class="section-title text-center">
+      <h2 class="souligne pb-4">Les dernières actus de Juju & Jaja</h2>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="journal-block">
+      <div class="row">
+
+        <%@actualite.each do |t|%>
+
+
+        <div class="col-lg-4 col-md-6">
+          <div class="journal-info">
+
+            <a href="blog-single.html">
+              <div class="journal-info article" style="background-image: url(<%= asset_path 'art3.jpg'%> " >
+              </div>
+            </a>
+
+            <div class="journal-txt">
+
+              <h4><a href="blog-single.html"><%=t.title%></a></h4>
+              <p class="separator pb-3"><%=t.short_desc%>
+              </p>
+              <div class="row " >
+                <div class="col-8">
+                  <span><i><%= t.author%></i></span>
+                </div>
+                <div class="col-4">
+                  <span style="font-size:10px; font-weight:light;"><i>Le : <%= t.created_at.strftime("%m/%d/%Y")%></i></span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <%end%>
+
+      </div>
+    </div>
+  </div>
+
+</div><!-- End Journal Section -->

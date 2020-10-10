@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root 'contact#new'
 
   resources :contact
+  resources :actualite
+
 
 end
