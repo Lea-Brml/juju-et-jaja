@@ -1,7 +1,16 @@
 
-<div id="journal" class="text-left paddsection">
 
-  <div class="container">
+    <div class=" jumbotron-blog" style="background-image: url(<%= asset_path 'blog.png'%>)">
+
+    </div>
+
+
+
+<div id="journal" class="text-left ">
+
+
+
+  <div class="container" style="padding-top:6em;">
     <div class="section-title text-center">
       <h2 class="souligne pb-4">Les dernières actus de Juju & Jaja</h2>
     </div>
@@ -18,10 +27,17 @@
         <div class="col-lg-4 col-md-6">
           <div class="journal-info">
 
-            <a href="blog-single.html">
-              <div class="journal-info article" style="background-image: url(<%= asset_path 'art3.jpg'%> " >
+
+              <div class="journal-info article"  >
+                <a href="<%=actualite_path(t)%>">
+                <%if t.avatar.attached?%>
+                  <%= image_tag t.avatar, alt: 'avatar', class:"article" %>
+                <%else%>
+                  <%= image_tag 'logo4.png'%>
+                <%end%>
+                </a>
               </div>
-            </a>
+
 
             <div class="journal-txt">
 
@@ -34,6 +50,7 @@
                 </div>
                 <div class="col-4">
                   <span style="font-size:10px; font-weight:light;"><i>Le : <%= t.created_at.strftime("%m/%d/%Y")%></i></span>
+
                 </div>
               </div>
 
@@ -41,6 +58,7 @@
 
           </div>
         </div>
+
 
         <%end%>
 

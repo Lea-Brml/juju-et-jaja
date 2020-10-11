@@ -5,6 +5,13 @@ class ActualiteController < ApplicationController
   end
 
 
+  def show
+
+    @actualite = Actualite.find(params[:id])
+
+  end
+
+
 
   def create
 
@@ -24,7 +31,7 @@ class ActualiteController < ApplicationController
 
   def index
 
-    @actualite = Actualite.all
+    @actualite = Actualite.all.order(created_at: :desc)
 
   end
 

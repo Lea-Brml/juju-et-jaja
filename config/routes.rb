@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root 'contact#new'
 
   resources :contact
-  resources :actualite
+  resources :actualite do
+    resources :avatars, only: [:create]
+  end 
 
 
 end

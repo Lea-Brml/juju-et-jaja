@@ -175,7 +175,6 @@
 
 
 
-    <!-- ======= Journal Section ======= -->
     <div id="journal" class="text-left paddsection">
 
       <div class="container">
@@ -184,149 +183,58 @@
         </div>
       </div>
 
+
       <div class="container">
         <div class="journal-block">
           <div class="row">
 
+
+
+            <%@actualite.each do |t, id|%>
+
+
             <div class="col-lg-4 col-md-6">
               <div class="journal-info">
 
-                <a href="blog-single.html">
-                  <div class="journal-info article" style="background-image: url(<%= asset_path 'art3.jpg'%> " >
+
+                  <div class="journal-info article"  >
+                    <a href="<%=actualite_path(t)%>">
+                    <%if t.avatar.attached?%>
+                      <%= image_tag t.avatar, alt: 'avatar', class:"article"  %>
+                    <%else%>
+                      <%= image_tag 'logo4.png'%>
+                    <%end%>
+                    </a>
                   </div>
-                </a>
+
 
                 <div class="journal-txt">
 
-                  <h4><a href="blog-single.html">Bonne fête à tous les papas !</a></h4>
-                  <p class="separator">Cadeau de Jaja à son papa à l'occasion de le fête des pères ! Une idée, une envie de personnalisation, n'hésitez pas à me contacter 🙂🙃<br>
-                 #telperetellefille #fetedesperes #bellecommepapa #jujuetjaja
+                  <h4><a href="blog-single.html"><%=t.title%></a></h4>
+                  <p class="separator pb-3"><%=t.short_desc%>
                   </p>
+                    <span style="font-size:10px; font-weight:light;"><i>Le : <%= t.created_at.strftime("%m/%d/%Y")%></i></span>
+
 
                 </div>
 
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
-              <div class="journal-info">
+            <%end%>
 
-                <a href="blog-single.html">
-                  <div class="journal-info article" style="background-image: url(<%= asset_path 'art2.jpg'%> " >
-                  </div>
-                </a>
-
-                <div class="journal-txt">
-
-                  <h4><a href="blog-single.html">Petit cadeau pour Jade !</a></h4>
-                  <p style="padding-top:-2em;">Une petite trousse pour ranger sa brosse à dents pour chez sa nounou 🦷
-                  <br>
-                  #trousse #personnalisé #personnalisation #pourmonbebe
-                  </p>
-
-                </div>
-
-              </div>
+            <div class="col-12"style="text-align:right">
+              <%= link_to "Voir toutes les actus >", actualite_index_path, class:"pr-4"%>
             </div>
 
-            <div class="col-lg-4 col-md-6">
-              <div class="journal-info">
-
-                <a href="blog-single.html">
-                  <div class="journal-info article" style="background-image: url(<%= asset_path 'art1.jpg'%> " >
-                  </div>
-                </a>
-
-                <div class="journal-txt">
-
-                  <h4><a href="blog-single.html">Cadeaux de Noël en préparation ! </a></h4>
-                  <p style="padding-top:-2em;">Pour le plus grand plaisir de ces messieurs, les nœuds papillons sont bientôt terminés ! 🤵<br> #noeudpapillon #noeudpap #creation #handmade #faitmain
-                  </p>
-
-                </div>
-
-
-              </div>
-            </div>
 
           </div>
+
         </div>
       </div>
 
     </div><!-- End Journal Section -->
 
-    <!-- ======= Contact Section ======= -->
-    <div id="contact">
-
-          <div class="row">
-
-            <div class="col-lg-6 zebre" style="background-image: url(<%= asset_path 'nimes.jpg'%>); background-position:top;">
-            </div>
-
-
-            <div class="col-lg-6 zebre" style="background-image: url(<%= asset_path "zebre.png"%>); padding-top:6em; padding-bottom:6em; ">
-
-
-              <h2 class="pl-4 pb-4 mb-4 titre-categorie" >Contactez-moi !</h2>
-
-              <div class="container php-email-form">
-                <div class="row pl-4 pr-4">
-
-
-                  <% flash.each do |type, msg| %>
-                    <div class="alert alert-info margin-top:100px; " style="z-index:1">
-                      <%= msg %>
-                    </div>
-                  <% end %>
-
-                  <%= form_tag url_for(contact_index_path), :contact => @contact, method: 'post' do %>
-                    <div class="row pl-4 pr-4">
-
-                      <div class="col-lg-6">
-                        <div class="form-group contact-block1">
-                          <%= text_field_tag 'name', nil, placeholder: 'Nom*', class:"form-control" %>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <%= text_field_tag 'firstname', nil, placeholder: 'Prénom*', class:"form-control" %>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <%= text_field_tag 'phone', nil, placeholder: "Téléphone-portable", class:"form-control" %>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <%= text_field_tag 'email', nil, placeholder: "E-mail*", class:"form-control" %>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-12">
-                        <div class="form-group">
-                          <%= text_area_tag 'message', nil, placeholder: "Message", rows:"10", class:"form-control" %>
-                        </div>
-                      </div>
-
-
-                      <div class="col-lg-12">
-                        <%= submit_tag "    Envoyer    ", class: "btn btn-outline-primary", style:"border-radius:20px;" %>
-                        <%end%>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-
-            </div>
-          </div>
-
-    </div><!-- End Contact Section -->
 
 
 
