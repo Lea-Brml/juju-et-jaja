@@ -123,6 +123,12 @@ p {
   background-size: cover;
 }
 
+.test {
+  width:auto;
+  height: 24em;
+  object-fit:cover;
+}
+
 
 /**
 * ZOOM IMAGE EFFECT ON HOVER // wpRock.fr
