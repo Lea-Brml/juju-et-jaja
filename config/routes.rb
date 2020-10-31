@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :avatars, only: [:create]
   end
 
+  resources :cartables do
+    resources :cartable_avatar, only: [:create]
+  end
+
   get 'static_page', to: 'static_page#index'
 
 

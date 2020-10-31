@@ -1,0 +1,75 @@
+<div style="margin-top:400px;">
+
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-info margin-top:100px; " style="z-index:1">
+      <%= msg %>
+    </div>
+  <% end %>
+
+
+
+  <div id="journal" class="text-left ">
+
+
+
+    <div class="container" style="padding-top:6em;">
+      <div class="section-title text-center">
+        <h2 class="souligne pb-4">Les dernières actus de Juju & Jaja</h2>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="journal-block">
+        <div class="row">
+
+          <%@cartable.each do |t|%>
+
+
+          <div class="col-lg-4 col-md-6">
+            <div class="journal-info">
+
+
+                <div class="journal-info test"  >
+                  <a href="<%=cartable_path(t)%>">
+                    <%if t.cartable_avatar.attached?%>
+                      <%= image_tag t.cartable_avatar, alt: 'avatar' %>
+                    <%else%>
+                    <%= image_tag 'cartable.jpg'%>
+                    <%end%>
+                  </a>
+                </div>
+
+
+              <div class="journal-txt">
+
+                <h4><a href="blog-single.html"><%=t.name%></a></h4>
+                <div class="row " >
+                  <div class="col-12">
+                    <p><i><%= t.short_desc%></i></p>
+                  </div>
+                  <div class="col-4">
+                    <span style="font-size:10px; font-weight:light;"><i>Le : <%= t.created_at.strftime("%m/%d/%Y")%></i></span>
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <%end%>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- End Journal Section -->
+
+
+  <%= link_to 'creer un nouveau porduit', new_cartable_path %>
+
+
+</div>

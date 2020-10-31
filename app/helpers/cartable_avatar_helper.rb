@@ -1,0 +1,2 @@
+module CartableAvatarHelper
+end

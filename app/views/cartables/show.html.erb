@@ -1,0 +1,64 @@
+
+<div class="contenair" style="margin-top:8em; margin-bottom:4em; ">
+
+  <div class="row" style=" align-items:center;">
+
+    <div class="col-6">
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%if @cartable.cartable_avatar.attached?%>
+              <%= image_tag @cartable.cartable_avatar, alt: 'avatar' ,  class:"d-block w-100", style:" height:40em;object-fit:cover; width:auto;"%>
+            <%else%>
+              <%= image_tag 'logo4.png', class:"d-block w-100", style:"height:40em; object-fit:cover;"%>
+            <%end%>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag 'logo4.png', class:"d-block w-100", style:"height:40em; object-fit:cover;"%>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag 'logo4.png', class:"d-block w-100", style:"height:40em; object-fit:cover;"%>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="col-6">
+
+      <div class="px-4">
+        <h1 style="padding-bottom:2em;"><%= @cartable.name %></h1>
+
+        <p> <%= @cartable.short_desc %> </p>
+
+        <p> <%= @cartable.long_desc %> </p>
+
+        <p> <%= @cartable.price %> €</p>
+      </div>
+
+      <%= form_tag cartable_cartable_avatar_index_path(@cartable), multipart: true do %>
+        <%= file_field_tag :cartable_avatar %>
+        <%= submit_tag "mettre à jour" %>
+      <% end %>
+
+
+    </div>
+
+  </div>
+
+</div>
