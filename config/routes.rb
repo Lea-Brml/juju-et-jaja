@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :contact
   resources :actualite do
     resources :avatars, only: [:create]
-  end 
+  end
+
+  get 'static_page', to: 'static_page#index'
 
 
 end

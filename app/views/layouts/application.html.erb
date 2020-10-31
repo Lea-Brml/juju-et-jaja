@@ -21,6 +21,9 @@
 
     <meta content="" name="keywords">
 
+    <%= favicon_link_tag asset_path('star.ico') %>
+
+
 
 
     <!-- Google Fonts -->
@@ -33,27 +36,32 @@
   <body>
 
 
-      <!-- ======= Navbar ======= -->
-      <nav id="main-nav">
-        <div class="row">
-          <div class="container">
-
-            <div class="logo">
-              <a href="index.html"><%= image_tag("logo4.png")%></a>
-            </div>
-
-            <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
-
-            <ul class="nav-menu list-unstyled">
-              <li><a href="<%=root_path%>" class="smoothScroll">Accueil</a></li>
-              <li><a href="#about" class="smoothScroll">Mes créations</a></li>
-              <li><a href="<%= actualite_index_path%>" class="smoothScroll">Mes actus</a></li>
-              <li><a href="#contact" class="smoothScroll">Contact</a></li>
+    <nav class="navbar">
+          <div class="container text-center py-2">
+            <ul class="nav">
+              <div class="logo">
+                <a href="index.html"><%= image_tag("logo4.png")%></a>
+              </div>
             </ul>
 
-          </div>
-        </div>
-      </nav><!-- End Navbar -->
+            <ul class="nav justify-content-end " >
+              <li class="nav-item">
+                <a href="<%=root_path%>" class="nav-link active ">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a href="<%=root_path%>" class="nav-link active">Mes créations</a>            </li>
+              <li class="nav-item">
+                <a href="<%=actualite_index_path%>" class="nav-link active">Mes actus</a>
+              </li>
+              <li class="nav-item">
+                <a href="<%=root_path(anchor: "contact")%>" class="nav-link active">Mes actus</a>
+              </li>
+            </ul>
+            </div>
+          </nav>
+
+
+
 
 
     <%= yield %>
@@ -63,18 +71,20 @@
 
     <div id="contact">
 
-          <div class="row">
+          <div class="row" style="height: 100vh;">
 
             <div class="col-lg-6 zebre" style="background-image: url(<%= asset_path 'nimes.jpg'%>); background-position:top;">
             </div>
 
 
-            <div class="col-lg-6 zebre" style="background-image: url(<%= asset_path "zebre.png"%>); padding-top:6em; padding-bottom:6em; ">
+            <div class="col-lg-6 zebre" style="background-image: url(<%= asset_path "zebre.png"%>); padding-top:10em; ">
 
 
               <h2 class="pl-4 pb-4 mb-4 titre-categorie" >Contactez-moi !</h2>
 
-              <div class="container php-email-form">
+              <p class="ml-4 mr-4 pb-4" style="color:white; font-size:18px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu viverra nulla. Maecenas et neque auctor, gravida eros nec, consectetur turpis.</p>
+
+              <div class="container php-email-form" >
                 <div class="row pl-4 pr-4">
 
 
